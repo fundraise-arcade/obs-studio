@@ -219,8 +219,10 @@ static bool nvenc_device_available(void)
 			continue;
 		}
 
-		if (get_id_from_sys(dirent->d_name, "vendor") !=
-		    0x10de) { // 0x10de = NVIDIA Corporation
+		if (get_id_from_sys(dirent->d_name, "vendor") != 0x10de &&
+		    get_id_from_sys(dirent->d_name, "vendor") !=
+		    0x1414) { // 0x10de = NVIDIA Corporation
+		              // 0x1414 = Microsoft Corporation for HyperV Virtual VGA
 			continue;
 		}
 
