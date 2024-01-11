@@ -1088,11 +1088,14 @@ bool is_arm64_windows(void)
 #if defined(_M_ARM64) || defined(_M_ARM64EC)
 	return true;
 #else
+	/*
 	USHORT processMachine;
 	USHORT nativeMachine;
 	bool result = IsWow64Process2(GetCurrentProcess(), &processMachine,
 				      &nativeMachine);
 	return (result && (nativeMachine == IMAGE_FILE_MACHINE_ARM64));
+	*/
+	return false; // XXX: this is bad but we don't have a better solution yet
 #endif
 }
 
