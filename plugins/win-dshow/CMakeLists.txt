@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.24...3.25)
 
+option(ENABLE_WIN_DSHOW "Build Windows DirectShow Plugin." TRUE)
+if(NOT ENABLE_WIN_DSHOW)
+  target_disable_feature(win-dshow "Windows DirectShow Plugin")
+  target_disable(win-dshow)
+  return()
+endif()
+
 if(OBS_CMAKE_VERSION VERSION_GREATER_EQUAL 3.0.0)
   add_library(obs-virtualcam-interface INTERFACE)
   add_library(OBS::virtualcam-interface ALIAS obs-virtualcam-interface)

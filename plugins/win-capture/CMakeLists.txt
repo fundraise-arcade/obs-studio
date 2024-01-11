@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.24...3.25)
 
+option(ENABLE_WIN_CAPTURE "Build Windows Capture Plugin." TRUE)
+if(NOT ENABLE_WIN_CAPTURE)
+  target_disable_feature(win-capture "Windows Capture Plugin")
+  target_disable(win-capture)
+  return()
+endif()
+
 if(OBS_CMAKE_VERSION VERSION_GREATER_EQUAL 3.0.0)
   add_library(hook-config INTERFACE)
   add_library(OBS::hook-config ALIAS hook-config)

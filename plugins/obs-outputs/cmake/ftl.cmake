@@ -1,6 +1,13 @@
 find_package(CURL REQUIRED)
 find_package(jansson REQUIRED)
 
+option(ENABLE_FTL "Build with FTL protocol support." TRUE)
+if(NOT ENABLE_FTL)
+  target_disable_feature(ftl-sdk "FTL protocol support")
+  target_disable(ftl-sdk)
+  return()
+endif()
+
 add_library(ftl-sdk OBJECT)
 add_library(OBS::ftl-sdk ALIAS ftl-sdk)
 

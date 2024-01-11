@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.24...3.25)
 
 legacy_check()
 
+option(ENABLE_WIN_WASAPI "Build Windows WASAPI Plugin." TRUE)
+if(NOT ENABLE_WIN_WASAPI)
+  target_disable_feature(win-wasapi "Windows WASAPI Plugin")
+  target_disable(win-wasapi)
+  return()
+endif()
+
 add_library(win-wasapi MODULE)
 add_library(OBS::wasapi ALIAS win-wasapi)
 
