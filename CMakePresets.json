@@ -182,7 +182,7 @@
         "ENABLE_NVVFX": false,
         "ENABLE_LIBFDK": false,
         "ENABLE_RTMPS": false,
-        "ENABLE_VST": false,
+        "ENABLE_VST": true,
         "ENABLE_VST_BUNDLED_HEADERS": false,
         "ENABLE_SERVICE_UPDATES": false,
         "ENABLE_VLC": false,
