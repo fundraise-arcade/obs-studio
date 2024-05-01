@@ -201,8 +201,8 @@
         "ENABLE_WEBSOCKET": false,
         "ENABLE_WHATSNEW": false,
         "ENABLE_WIN_CAPTURE": true,
-        "ENABLE_WIN_DSHOW": false,
-        "ENABLE_WIN_WASAPI": false,
+        "ENABLE_WIN_DSHOW": true,
+        "ENABLE_WIN_WASAPI": true,
         "ENABLE_FTL": false
       }
     },
